@@ -21,7 +21,8 @@ class App extends Component {
   };
 
   countTotalFeedback = () => {
-    const sum = this.state.good + this.state.neutral + this.state.bad;
+    const {good, neutral, bad} = this.state
+    const sum = good + neutral + bad;
     return sum;
   };
 
@@ -29,13 +30,12 @@ class App extends Component {
     const percentage = Math.round(
       (this.state.good / (this.state.good + this.state.bad)) * 100
     );
-    console.dir(percentage);
     return percentage;
   };
 
   render() {
     const { good, neutral, bad } = this.state;
-    const totalFb = this.countTotalFeedback;
+    const totalFb = this.countTotalFeedback();
 
     return (
       <div className="App">
