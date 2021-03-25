@@ -11,7 +11,6 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  // static defaultProps = {};
 
   changeFeedbackValue = (e) => {
     const name = e.target.name;
